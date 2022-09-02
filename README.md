@@ -1,0 +1,2 @@
+# javasrcipt
+basic js projects

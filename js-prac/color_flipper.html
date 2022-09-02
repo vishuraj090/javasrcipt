@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+
+</head>
+<body>
+
+    <main>
+        <h2>Background Color: <span class="color">#fefbd8</span></h2>
+        <button id="btn">Click Me!</button>
+    </main>
+    <script type="text/javascript">
+    const btn = document.getElementById('btn');
+    const clr = document.getElementsByClassName('color');
+
+       btn.onclick = function(){
+           
+        let r =  Math.floor(Math.random()*256);
+        let g =  Math.floor(Math.random()*256);
+        let b =  Math.floor(Math.random()*256);
+        let col = `rgb(${r}, ${g}, ${b})`;
+        
+
+        document.body.style.backgroundColor = col;
+       }
+       
+    </script>
+
+</body>
+</html>

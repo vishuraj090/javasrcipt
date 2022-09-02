@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock-Anticlock</title>
+    <script src="clock_index.js"></script>
+  </head>
+  <body>
+    <button class="btn" id="btnId">Button</button>
+    <h1 class="text" id="textId" side="topLeft">Clockwise</h1>
+  </body>
+
+  <style>
+    .btn {
+      background-color: #f60;
+      color: #000;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .text {
+      background-color: #f60;
+      position: absolute;
+      color: #000;
+      padding: 20px;
+      width: 200px;
+      height: 100px;
+      text-align: center;
+      vertical-align: middle;
+      left: 0;
+      top: 100px;
+      transition: left 5s cubic-bezier(0, 0, 1, 1);
+    }
+  </style>
+</html>

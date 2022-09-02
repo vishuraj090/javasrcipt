@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+        <title>Counter</title>
+    </head>
+    <body>
+        <div class="counter--main">
+            <div class="counter--pre">
+                <input type="number" class="input-number" id="txt" value="0"/>
+                <button class="btn decrease" id="decre">Decreament</button>
+                <button class="btn reset" id="reset">Reset</button>
+                <button class="btn increase" id="incre">Increament</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        
+        var button = document.querySelectorAll(".btn");
+        var count = 0;
+        var t1 = document.getElementById("txt");
+        button.forEach(function(counter) {
+            console.log(counter);
+            counter.addEventListener("click", function(e) {
+             //   console.log(count.currentTarget.childList);
+             let a = e.currentTarget.classList;
+               
+                if (a.contains("decrease")) {
+                 count--;
+                 t1.value = count;
+                 console.log(count, t1);
+
+                } else if (a.contains("increase")) {
+                    count++;
+                    t1.value = count;
+                    console.log(count, t1);
+                } else {
+                    count = 0;
+                    t1.value = count;
+                    console.log(count, t1);
+                }
+                
+            });
+        });
+        
+    </script>
+
+    <!-- <script>
+        var button = document.querySelectorAll(".btn");
+        var count = 0;
+        var t1 = (document.getElementById("txt").value = "0");
+        button.forEach(function (counter) {
+            console.log(counter);
+            counter.addEventListener("click", function (e) {
+                //   console.log(count.currentTarget.childList);
+                let a = e.currentTarget.classList;
+
+                if (a.contains("decrease")) {
+                    count--;
+                    document.getElementById("txt").value = count;
+                    
+                    // console.log(count);
+                } else if (a.contains("increase")) {
+                    count++;
+                    document.getElementById("txt").value = count;
+                   
+                    // console.log(count);
+                } else {
+                    count = 0;
+                    document.getElementById("txt").value = "0";
+                }
+            });
+        });
+    </script> -->
+
+    <!-- <script>
+        var incBtn = document.getElementById("incre");
+        var resetBtn = document.getElementById("reset");
+        var decBtn = document.getElementById("decre");
+        resetBtn.onclick = function () {
+            document.getElementById("txt").value = "0";
+        };
+        decBtn.onclick = function () {
+            document.getElementById("txt").stepDown();
+        };
+        incBtn.onclick = function () {
+            document.getElementById("txt").stepUp();
+        };
+    </script>  -->
+</html>

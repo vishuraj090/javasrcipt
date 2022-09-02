@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object</title>
+</head>
+<body>
+ <h1>Class Objects</h1>   
+ <button onclick="V()">Click Here</button>
+<script>
+    class student{
+        constructor(n, r, b, m)
+        {
+            this.name = n;
+            this.roll_no = r;
+            this.branch = b;
+            this.marks = m;
+        }
+        display(){
+            var str = "";
+            str = `${str} Name: ${this.name},`;
+            str = `${str} Roll Number: ${this.roll_no},`;
+            str = `${str} Branch: ${this.branch},`;
+            str = `${str} Marks: ${this.marks}`;
+            return str;
+        }
+        result(){
+            var ans = "";
+            if(this.marks >=90) ans = "A";
+            else if(this.marks >= 80) ans = "B";
+            else ans = "C";
+            return ans;
+        }
+    }
+        function V() {
+            
+            let obj = new student("Rocky", 51, "CSE", 80);
+            alert(obj.display())
+            alert(obj.result());
+
+            
+        }
+    
+</script>
+</body>
+</html>

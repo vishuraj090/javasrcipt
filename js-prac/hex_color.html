@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sub_menu {
+        display: flex;
+        align-items: center;
+        }
+
+        #text {
+        margin: 10px 10px;
+        }
+        input#adduu {
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        }
+
+        input#adduu::-webkit-color-swatch {
+        border-radius: 10px;
+        }
+        .inputMain {
+        display: flex;
+        }
+
+        </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="inputMain">
+            <div class="preview">
+                <input type="color" id="adduu" value="#000000">
+            </div>
+            <div class="sub_menu">
+                <input type="color" id="bg_color" value="#000000">
+                <p id="text">#000000</p>
+            </div>
+        </div>
+        
+        <div class="inputMain">
+            <div class="preview">
+                <input type="color" id="adduu" value="#ffffff">
+            </div>
+            <div class="sub_menu">
+                <input type="color" id="bg_color" value="#ffffff">
+                <p id="text">#ffffff</p>
+            </div>
+        </div>
+        <div class="inputMain">
+            <div class="preview">
+                <input type="color" id="adduu" value="#ff6600">
+            </div>
+            <div class="sub_menu">
+                <input type="color" id="bg_color" value="#ff6600">
+                <p id="text">#ff6600</p>
+            </div>
+        </div>  
+        <div class="inputMain">
+            <div class="preview">
+                <input type="color" id="adduu" value="#fe2b80">
+            </div>  
+            <div class="sub_menu">
+                <input type="color" id="bg_color" value="#fe2b80">
+                <p id="text">#fe2b80</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var mainIp = document.querySelectorAll('.inputMain');
+        var colorInput = document.querySelectorAll('#bg_color');
+        var colorText = document.querySelectorAll('#text'); 
+        var preInput = document.querySelectorAll('#adduu');
+
+        for(let i = 0; i < colorInput.length; i++){
+
+            let b = colorText[i];
+            let c = preInput[i];
+        //   console.log(b, c);
+            colorInput[i].onchange = () => {
+                let a = colorInput[i].value;
+                c.setAttribute("value", `${a}`);
+                colorInput[i].setAttribute("value", a);
+                console.log(c);
+
+               b.innerHTML = a;
+                           
+            }
+        
+        }
+    </script>
+</body>
+
+</html>

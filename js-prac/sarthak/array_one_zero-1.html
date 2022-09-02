@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array practice</title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>   
+
+<script>
+// nonogramrow([])
+nonogramrow([0,0,0,0,0])
+nonogramrow([1,1,1,1,1]) 
+// nonogramrow([0,1,1,1,1,1,0,1,1,1,1]) 
+
+let text = "";
+let a = nonogramrow.forEach(vivek);
+document.getElementById('demo').innerHTML = text;
+
+function vivek(item, index){
+    text += index + ": " + item + "<br>";
+}
+
+</script>
+
+</body>
+</html>

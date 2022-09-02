@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>js practice </title>
+<style>
+.container{
+
+display: flex;
+justify-content: center;
+}
+body{
+
+background-color: #ddd;
+}
+h2{
+font-size: 30px;
+text-align: center;
+}
+button {
+padding: 5px 30px;
+}
+#stopwatch{
+font-size: 25px;
+font-weight: 600;
+text-align: center;
+margin: 10px 0px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<h2>Stop Watch</h2>
+<div id="stopwatch"><span id="seconds">00</span>:<span id="tens">00</span></div>
+
+<button id="start-btn" class="start" onclick="start_timer()">Start</button>
+<button id="stop-btn" class="stop" onclick="stop_timer()">Stop</button>
+<button id="reset-btn" class="reset" onclick="reset_timer()">Reset</button>
+
+</div>
+
+</div>
+<script>
+    var sec = document.getElementById('seconds'),
+     tens = document.getElementById('tens'),
+     start = document.getElementById('start-btn'),
+     stop = document.getElementById('stop-btn'),
+     reset = document.getElementById('reset-btn'),
+     _seconds = 0, 
+     _tens = 0;
+
+function timer(){
+    _tens++;
+
+    if(_tens < 9){
+        tens.innerHTML = "0" + _tens;
+    }
+    if(_tens > 9){
+        tens.innerHTML = _tens;
+    }
+    if(_tens > 99){
+        _tens = 0;
+        tens.innerHTML = "0" + _tens;
+        _seconds++;
+        sec.innerHTML = "0" + _seconds;
+    }
+    if(_seconds > 9){
+        sec.innerHTML = _seconds;
+    }
+    }
+
+    function start_timer(){
+//    console.log('hello');
+     start_watch = setInterval(timer, 10);
+}
+
+function stop_timer(){
+ //   console.log('hy');
+    clearInterval(start_watch);
+}
+
+function reset_timer(){
+    //   console.log('hi');
+    clearInterval(start_watch);
+    _seconds = 0; _tens = 0;
+    sec.innerHTML = "0" + _seconds;
+    tens.innerHTML = "0" + _tens;
+}
+</script>
+</body>
+</html>

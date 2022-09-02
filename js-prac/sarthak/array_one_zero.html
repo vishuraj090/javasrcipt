@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array practice</title>
+</head>
+<body>
+<h2>Remove 0 from an array</h2>
+
+    
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+    // var a = [0, 1, 0, 1, 0];
+    
+    // let txt ="";
+    // let arr = [];
+    // var txt1;
+    //     a.forEach(varray);
+    //     document.getElementById("demo").innerHTML = a;
+    //     document.getElementById("demo1").innerHTML = txt;
+    //     document.getElementById("demo2").innerHTML = txt1;
+    //     function varray(value,index, array)
+    // {
+    //     if(value==1)
+    //     {
+           
+    //     txt +=  value;
+        
+    //     txt1 = txt.length;
+    //     }
+     
+
+    // }   
+    //    arr.push(txt1);
+function nonogramrow(anArr, index) {
+
+    let txt = "";
+    let finalArr = [];
+    var count = 0;
+    for(var i = 0; i < anArr.length; i++)
+    {
+        parseInt(anArr[i]);
+        if(anArr[i]==1){
+            count++;
+            txt = anArr.length;
+            
+        }
+        else (anArr[i]==0)
+        {
+            count = 0;
+            // break;
+        }
+    }
+    
+    finalArr.push(anArr);
+    document.getElementById("demo").innerHTML = anArr;
+    document.getElementById("demo1").innerHTML = txt;
+}
+
+   
+ nonogramrow([]) 
+ nonogramrow([0,0,0,0,0]) 
+ nonogramrow([1,1,1,1,1]) 
+ nonogramrow([0,1,1,1,1,1,0,1,1,1,1]) 
+ nonogramrow([1,1,0,1,0,0,1,1,1,0,0]) 
+ nonogramrow([0,0,0,0,1,1,0,0,1,0,1,1,1])
+ nonogramrow([1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]) 
+    </script>
+
+</body>
+</html>
+<!-- # nonogramrow([]) => []
+# nonogramrow([0,0,0,0,0]) => []
+# nonogramrow([1,1,1,1,1]) => [5]
+# nonogramrow([0,1,1,1,1,1,0,1,1,1,1]) => [5,4]
+# nonogramrow([1,1,0,1,0,0,1,1,1,0,0]) => [2,1,3]
+# nonogramrow([0,0,0,0,1,1,0,0,1,0,1,1,1]) => [2,1,3]
+# nonogramrow([1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]) => [1,1,1,1,1,1,1,1] -->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+
+            padding: 15px;
+            margin-left: 35px;
+
+        }
+
+        .circle {
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+
+        .square {
+            border-radius: none;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; align-items: center;">
+        None<input type="radio" name="myRadios" value="1" />
+        Circle<input type="radio" name="myRadios" value="2" />
+        Square<input type="radio" name="myRadios" value="3" />
+        <img src="pexels-maxime-francis-2246476.jpg" id="image">
+        <span id="a"></span>
+    </div>
+</body>
+
+<script type="text/javascript">
+    let btn = document.getElementsByName('myRadios');
+    let image = document.getElementById('image');
+    // console.log(btn);
+
+       btn.forEach(function(e){
+        //    console.log(btn);
+        e.addEventListener('click', function(ele){
+            //console.log(ele.currentTarget.value);
+            let val = ele.currentTarget.value;
+            if(val == 1){
+                image.classList.remove('square');
+                image.classList.remove('circle');
+            }
+            if(val == 2){
+                image.classList.add('circle');
+                image.classList.remove('square');
+            }
+            if(val == 3){
+                image.classList.remove('circle');
+                image.classList.add('square');
+            }
+
+        });
+       });
+
+
+   </script>
+</html>
